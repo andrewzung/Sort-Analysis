@@ -14,45 +14,70 @@ public class TimingSort
 {
   public static void main(String[] args)
   {
-    for (int j = 0; j<10; j++)
+    int timing = 0;
+    //Select Sort
+    for (int i = 10; i<=100000; i=i*10)
     {
-      for (int i = 10; i<100001; i=i*10)
+      timing = 0;
+      for (int j = 0; j<10; j++)
       {
         int[] list = ArrayGen.reversedArray(i);
         StopWatch sw = new StopWatch();
         sw.start();
         Sorts.selectSort(list);
         sw.stop();
-        System.out.println("The time it took for a Select Sort with " + i + " items is: " + sw.getElapsedTime() + " ms");
+        timing += sw.getElapsedTime();
       }
-      for (int i = 10; i<100001; i=i*10)
+      timing = timing/10;
+      System.out.println("The avg time for a reversed array of " + i + " items using a Select Sort is : " + timing + " ds."); 
+    }
+    
+    //Bubble Sort
+    for (int i = 10; i<100001; i=i*10)
+    {
+      timing = 0;
+      for (int j = 0; j<10; j++)
       {
         int[] list = ArrayGen.reversedArray(i);
         StopWatch sw = new StopWatch();
         sw.start();
         Sorts.bubbleSort(list);
         sw.stop();
-        System.out.println("The time it took for a Bubble Sort with " + i + " items is: " + sw.getElapsedTime() + " ms");
+        timing += sw.getElapsedTime();
       }
-      for (int i = 10; i<100001; i=i*10)
+      timing = timing/10;
+      System.out.println("The avg time for a reversed array of " + i + " items using a Bubble Sort is : " + timing + " ds."); 
+      
+      //InsertSort
+      timing = 0;
+      for (int j = 0; j<10; j++)
       {
         int[] list = ArrayGen.reversedArray(i);
         StopWatch sw = new StopWatch();
         sw.start();
         Sorts.insertSort(list);
         sw.stop();
-        System.out.println("The time it took for a Insert Sort with " + i + " items is: " + sw.getElapsedTime() + " ms");
+        timing += sw.getElapsedTime();
       }
-      for (int i = 10; i<100001; i=i*10)
+      timing = timing/10;
+      System.out.println("The avg time for a reversed array of " + i + " items using an Insert Sort is : " + timing + " ds."); 
+      
+      //MergeSort
+      timing = 0;
+      for (int j = 0; j<10; j++)
       {
         int[] list = ArrayGen.reversedArray(i);
         StopWatch sw = new StopWatch();
         sw.start();
         Sorts.mergeSort(list);
         sw.stop();
-        System.out.println("The time it took for a Merge Sort with " + i + " items is: " + sw.getElapsedTime() + " ms");
       }
-      for (int i = 10; i<100001; i=i*10)
+      timing = timing/10;
+      System.out.println("The avg time for a reversed array of " + i + " items using a Merge Sort is : " + timing + " ds.");
+      
+      //QuickSort
+      timing = 0;
+      for (int j = 0; j<10; j++)
       {
         int[] list = ArrayGen.reversedArray(i);
         StopWatch sw = new StopWatch();
@@ -61,6 +86,8 @@ public class TimingSort
         sw.stop();
         System.out.println("The time it took for a Quick Sort with " + i + " items is: " + sw.getElapsedTime() + " ms");
       }
+      timing = timing/10;
+      System.out.println("The avg time for a reversed array of " + i + " items using a Quick Sort is : " + timing + " ds."); 
     }
   }
 }

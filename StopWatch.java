@@ -29,11 +29,11 @@ public class StopWatch {
   }
   
   
-  //elaspsed time in milliseconds
+  //elaspsed time in microseconds
   public long getElapsedTime()
   {
     long elapsed;   
-    elapsed = (stopTime - startTime)/1000000;    
+    elapsed = (stopTime - startTime)/1000;    
     return elapsed;
   }
   
