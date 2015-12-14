@@ -1,5 +1,5 @@
 /*
- * Class:  MainSort
+ * Class:  TimingSort
  * Author:  Andrew Zung
  * Date: Nov 13, 2014
  * 
@@ -10,7 +10,7 @@
 
 import java.util.*;
 
-public class MainSort
+public class TimingSort
 {
   public static void main(String[] args)
   {
