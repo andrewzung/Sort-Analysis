@@ -19,28 +19,28 @@ public class CountSort
       for (int i = 10; i<100001; i=i*10)
       {
         int[] list = ArrayGen.reversedArray(i);
-        Sorts.selectSort(list);
+        SortsCounting.selectSort(list);
       }
       for (int i = 10; i<100001; i=i*10)
       {
         int[] list = ArrayGen.reversedArray(i);
-        Sorts.bubbleSort(list);
+        SortsCounting.bubbleSort(list);
       }
       for (int i = 10; i<100001; i=i*10)
       {
         int[] list = ArrayGen.reversedArray(i);
-        Sorts.insertSort(list);
+        SortsCounting.insertSort(list);
       }
       for (int i = 10; i<100001; i=i*10)
       {
         int[] list = ArrayGen.reversedArray(i);
         StopWatch sw = new StopWatch();
-        Sorts.mergeSort(list);
+        SortsCounting.mergeSort(list);
       }
       for (int i = 10; i<100001; i=i*10)
       {
         int[] list = ArrayGen.reversedArray(i);
-        Sorts.quickSort(list);
+        SortsCounting.quickSort(list);
       }
     }
   }
