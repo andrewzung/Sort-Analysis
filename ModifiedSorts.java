@@ -1,5 +1,7 @@
 public class Sorts
 {
+  int comparisonsMade = 0;
+  int switchesMade = 0;
   //Selection
   public static void selectSort(int[] list)
   {
@@ -9,11 +11,13 @@ public class Sorts
       // assume list[0] is largest to start
       for (int i = 1; i <= top; i++) // check list[1] to list[top]
       {
+        comparisonsMade++;
         if (list[i] > list[largeLoc])
         {
           largeLoc = i;
         }
       }
+      switchesMade++;
       int temp = list[top]; // temporary storage
       list[top] = list[largeLoc];
       list[largeLoc] = temp;
@@ -29,8 +33,10 @@ public class Sorts
       sorted = true;
       for (int i = 0; i < top; i++)
       {
+        comparisonsMade++;
         if (list[i] > list[i+1] )
         {
+          switchesMade++;
           sorted = false; // a swap was required
           int temp = list[i];
           list[i] = list[i+1];
@@ -47,10 +53,12 @@ public class Sorts
     {
       int item = list[top]; // temporary storage of item
       int i = top;
+      comparisonsMade++;
       while (i > 0 && item < list[i-1])
       {
         // shift larger items to the right by one
         list[i] = list[i-1];
+        switchesMade++;
         // prepare to check the next item to the left
         i--;
       }
@@ -89,8 +97,9 @@ public class Sorts
     int numElements = rightEnd - leftPos + 1;
     
     // Main loop 
-    while( leftPos <= leftEnd && rightPos <= rightEnd ) 
-      if( a[ leftPos ]<=( a[ rightPos ] )) 
+    while( leftPos <= leftEnd && rightPos <= rightEnd )
+      comparisonsMade++;
+    if( a[ leftPos ]<=( a[ rightPos ] )) 
       tmpArray[ tmpPos++ ] = a[ leftPos++ ]; 
     else 
       tmpArray[ tmpPos++ ] = a[ rightPos++ ];
