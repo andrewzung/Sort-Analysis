@@ -1,7 +1,5 @@
-public class Sorts
+public class ModifiedSorts
 {
-  int comparisonsMade = 0;
-  int switchesMade = 0;
   //Selection
   public static void selectSort(int[] list)
   {
@@ -11,13 +9,11 @@ public class Sorts
       // assume list[0] is largest to start
       for (int i = 1; i <= top; i++) // check list[1] to list[top]
       {
-        comparisonsMade++;
         if (list[i] > list[largeLoc])
         {
           largeLoc = i;
         }
       }
-      switchesMade++;
       int temp = list[top]; // temporary storage
       list[top] = list[largeLoc];
       list[largeLoc] = temp;
@@ -33,10 +29,8 @@ public class Sorts
       sorted = true;
       for (int i = 0; i < top; i++)
       {
-        comparisonsMade++;
         if (list[i] > list[i+1] )
         {
-          switchesMade++;
           sorted = false; // a swap was required
           int temp = list[i];
           list[i] = list[i+1];
@@ -53,12 +47,10 @@ public class Sorts
     {
       int item = list[top]; // temporary storage of item
       int i = top;
-      comparisonsMade++;
       while (i > 0 && item < list[i-1])
       {
         // shift larger items to the right by one
         list[i] = list[i-1];
-        switchesMade++;
         // prepare to check the next item to the left
         i--;
       }
@@ -69,6 +61,8 @@ public class Sorts
   //Mergesort
   public static void mergeSort( int[] a ) 
   {
+    int comparisonsMade = 0;
+    int switchesMade = 0;
     int[] tmpArray = new int[a.length];
     mergeSort( a, tmpArray, 0, a.length - 1 );
   }
@@ -98,7 +92,6 @@ public class Sorts
     
     // Main loop 
     while( leftPos <= leftEnd && rightPos <= rightEnd )
-      comparisonsMade++;
     if( a[ leftPos ]<=( a[ rightPos ] )) 
       tmpArray[ tmpPos++ ] = a[ leftPos++ ]; 
     else 
@@ -116,6 +109,8 @@ public class Sorts
   //Quicksort
   public static void quickSort(int[] arr)
   {
+        int comparisonsMade = 0;
+    int switchesMade = 0;
     quickSort(arr, 0, arr.length-1);
   }
   
@@ -150,5 +145,4 @@ public class Sorts
     } 
     return i;
   }
-  
 }

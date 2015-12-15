@@ -19,27 +19,22 @@ public class CountingReversedSort
       for (int j = 0; j<10; j++)
       {
         int[] list = ArrayGen.reversedArray(i);
-        SortsCounting.selectSort(list);
-        
-        int[] list = ArrayGen.reversedArray(i);
-        SortsCounting.bubbleSort(list);
+        ModifiedSorts.selectSort(list);
       }
       for (int j = 0; j<10; j++)
       {
         int[] list = ArrayGen.reversedArray(i);
-        SortsCounting.insertSort(list);
+        ModifiedSorts.insertSort(list);
       }
-      for (int j = 0; j<10; j++)
-      {
-        int[] list = ArrayGen.reversedArray(i);
-        StopWatch sw = new StopWatch();
-        SortsCounting.mergeSort(list);
-      }
-      for (int j = 0; j<10; j++)
-      {
-        int[] list = ArrayGen.reversedArray(i);
-        SortsCounting.quickSort(list);
+//      for (int j = 0; j<10; j++)
+//      {
+//        int[] list = ArrayGen.reversedArray(i);
+//        ModifiedSorts.mergeSort(list);
+//      }
+//      for (int j = 0; j<10; j++)
+//      {
+//        int[] list = ArrayGen.reversedArray(i);
+//        ModifiedSorts.quickSort(list);
       }
     }
   }
-}
