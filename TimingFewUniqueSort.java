@@ -68,6 +68,7 @@ public class TimingFewUniqueSort
         sw.start();
         Sorts.mergeSort(list);
         sw.stop();
+        timing += sw.getElapsedTime();
       }
       timing = timing/10;
       System.out.println("The avg time for a reversed array of " + i + " items using a Merge Sort is : " + timing + " ds.");
@@ -81,6 +82,7 @@ public class TimingFewUniqueSort
         sw.start();
         Sorts.quickSort(list);
         sw.stop();
+        timing += sw.getElapsedTime();
       }
       timing = timing/10;
       System.out.println("The avg time for a reversed array of " + i + " items using a Quick Sort is : " + timing + " ds."); 
