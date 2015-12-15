@@ -1,5 +1,5 @@
 /*
- * Class:  TimingSort
+ * Class:  TimingNearlySortedSort
  * Author:  Andrew Zung
  * Date: Nov 13, 2014
  * 
@@ -10,7 +10,7 @@
 
 import java.util.*;
 
-public class TimingSort
+public class TimingNearlySortedSort
 {
   public static void main(String[] args)
   {
@@ -21,7 +21,7 @@ public class TimingSort
       timing = 0;
       for (int j = 0; j<10; j++)
       {
-        int[] list = ArrayGen.reversedArray(i);
+        int[] list = ArrayGen.nearlySortedArray(i);
         StopWatch sw = new StopWatch();
         sw.start();
         Sorts.selectSort(list);
@@ -30,15 +30,12 @@ public class TimingSort
       }
       timing = timing/10;
       System.out.println("The avg time for a reversed array of " + i + " items using a Select Sort is : " + timing + " ds."); 
-    }
     
     //Bubble Sort
-    for (int i = 10; i<100001; i=i*10)
-    {
       timing = 0;
       for (int j = 0; j<10; j++)
       {
-        int[] list = ArrayGen.reversedArray(i);
+        int[] list = ArrayGen.nearlySortedArray(i);
         StopWatch sw = new StopWatch();
         sw.start();
         Sorts.bubbleSort(list);
@@ -52,7 +49,7 @@ public class TimingSort
       timing = 0;
       for (int j = 0; j<10; j++)
       {
-        int[] list = ArrayGen.reversedArray(i);
+        int[] list = ArrayGen.nearlySortedArray(i);
         StopWatch sw = new StopWatch();
         sw.start();
         Sorts.insertSort(list);
@@ -66,7 +63,7 @@ public class TimingSort
       timing = 0;
       for (int j = 0; j<10; j++)
       {
-        int[] list = ArrayGen.reversedArray(i);
+        int[] list = ArrayGen.nearlySortedArray(i);
         StopWatch sw = new StopWatch();
         sw.start();
         Sorts.mergeSort(list);
@@ -79,12 +76,11 @@ public class TimingSort
       timing = 0;
       for (int j = 0; j<10; j++)
       {
-        int[] list = ArrayGen.reversedArray(i);
+        int[] list = ArrayGen.nearlySortedArray(i);
         StopWatch sw = new StopWatch();
         sw.start();
         Sorts.quickSort(list);
         sw.stop();
-        System.out.println("The time it took for a Quick Sort with " + i + " items is: " + sw.getElapsedTime() + " ms");
       }
       timing = timing/10;
       System.out.println("The avg time for a reversed array of " + i + " items using a Quick Sort is : " + timing + " ds."); 

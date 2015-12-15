@@ -1,20 +1,16 @@
-public class SortsCounting
+public class Sorts
 {
   //Selection
   public static void selectSort(int[] list)
   {
-    int switchMade = 0;
-    int comparisonMade = 0;
     for (int top = list.length - 1; top > 0; top--)
     {
       int largeLoc = 0; // location of largest element
       // assume list[0] is largest to start
       for (int i = 1; i <= top; i++) // check list[1] to list[top]
       {
-        comparisonMade++;
         if (list[i] > list[largeLoc])
         {
-          switchMade++;
           largeLoc = i;
         }
       }
@@ -22,46 +18,35 @@ public class SortsCounting
       list[top] = list[largeLoc];
       list[largeLoc] = temp;
     }
-    System.out.println("The system made " + switchMade + " switches for a select sort with " + list.length + ".");
-    System.out.println("The system made " + comparisonMade + " comparisons for a select sort with " + list.length + ".");
   }
   
   //Bubble
   public static void bubbleSort (int[] list)
   {
-    int switchMade = 0;
-    int comparisonMade = 0;
     boolean sorted = false;
     for (int top = list.length - 1; top > 0 && sorted == false; top--)
     {
       sorted = true;
       for (int i = 0; i < top; i++)
       {
-        comparisonMade++;
         if (list[i] > list[i+1] )
         {
           sorted = false; // a swap was required
-          switchMade++;
           int temp = list[i];
           list[i] = list[i+1];
           list[i+1] = temp;
         }
       }
     }
-    System.out.println("The system made " + switchMade + " switches for a bubble sort with " + list.length + ".");
-    System.out.println("The system made " + comparisonMade + " comparisons for a bubble sort with " + list.length + ".");
   }
   
   //Insertion
   public static void insertSort( int[] list)
   {
-    int switchMade = 0;
-    int comparisonMade = 0;
     for (int top = 1; top < list.length; top++)
     {
       int item = list[top]; // temporary storage of item
       int i = top;
-      comparisonMade++;
       while (i > 0 && item < list[i-1])
       {
         // shift larger items to the right by one
@@ -71,8 +56,6 @@ public class SortsCounting
       }
       list[i] = item; // put sorted item in open location
     }
-    System.out.println("The system made " + switchMade + " switches for an insert sort with " + list.length + ".");
-    System.out.println("The system made " + comparisonMade + " comparisons for an insert sort with " + list.length + ".");
   }
   
   //Mergesort
