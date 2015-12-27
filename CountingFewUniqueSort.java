@@ -1,5 +1,5 @@
 /*
- * Class:  CountingReversedSort
+ * Class:  CountingFewUniqueSort
  * Author:  Andrew Zung
  * Date: Nov 13, 2014
  * 
@@ -10,7 +10,7 @@
 
 import java.util.*;
 
-public class CountingReversedSort
+public class CountingFewUniqueSort
 {
   public static void main(String[] args)
   {
@@ -20,7 +20,7 @@ public class CountingReversedSort
       int totalSwaps = 0;
       for (int j = 0; j<10; j++)
       {
-        int[] list = ArrayGen.reversedArray(i);
+        int[] list = ArrayGen.fewUniqueArray(i);
         ModifiedSorts.compare= 0;
         ModifiedSorts.swaps = 0;
         ModifiedSorts.selectSort(list);
@@ -29,13 +29,13 @@ public class CountingReversedSort
       }
       totalCompare = totalCompare/10;
       totalSwaps = totalSwaps/10;
-      System.out.println("The comparisons and swaps for a reversed array of " + i + " items using a Select Sort is : " + totalCompare + totalSwaps);
+      System.out.println("The comparisons and swaps for a few unique array of " + i + " items using a Select Sort is : " + totalCompare + totalSwaps);
       
       totalCompare = 0;
       totalSwaps = 0;
       for (int j = 0; j<10; j++)
       {
-        int[] list = ArrayGen.reversedArray(i);
+        int[] list = ArrayGen.fewUniqueArray(i);
         ModifiedSorts.compare= 0;
         ModifiedSorts.swaps = 0;
         ModifiedSorts.insertSort(list);
@@ -44,13 +44,13 @@ public class CountingReversedSort
       }
       totalCompare = totalCompare/10;
       totalSwaps = totalSwaps/10;
-      System.out.println("The comparisons and swaps for a reversed array of " + i + " items using a Insert Sort is : " + totalCompare + totalSwaps);
+      System.out.println("The comparisons and swaps for a few unique array of " + i + " items using a Insert Sort is : " + totalCompare + totalSwaps);
       
       totalCompare = 0;
       totalSwaps = 0;
       for (int j = 0; j<10; j++)
       {
-        int[] list = ArrayGen.reversedArray(i);
+        int[] list = ArrayGen.fewUniqueArray(i);
         ModifiedSorts.compare= 0;
         ModifiedSorts.swaps = 0;
         ModifiedSorts.mergeSort(list);
@@ -59,13 +59,13 @@ public class CountingReversedSort
       }
       totalCompare = totalCompare/10;
       totalSwaps = totalSwaps/10;
-      System.out.println("The comparisons and swaps for a reversed array of " + i + " items using a Merge Sort is : " + totalCompare + totalSwaps);
+      System.out.println("The comparisons and swaps for a few unique array of " + i + " items using a Merge Sort is : " + totalCompare + totalSwaps);
       
       totalCompare = 0;
       totalSwaps = 0;
       for (int j = 0; j<10; j++)
       {
-        int[] list = ArrayGen.reversedArray(i);
+        int[] list = ArrayGen.fewUniqueArray(i);
         ModifiedSorts.compare= 0;
         ModifiedSorts.swaps = 0;
         ModifiedSorts.quickSort(list);
@@ -74,7 +74,7 @@ public class CountingReversedSort
       }
       totalCompare = totalCompare/10;
       totalSwaps = totalSwaps/10;
-      System.out.println("The comparisons and swaps for a reversed array of " + i + " items using a Quick Sort is : " + totalCompare + totalSwaps);
+      System.out.println("The comparisons and swaps for a few unique array of " + i + " items using a Quick Sort is : " + totalCompare + totalSwaps);
     }
   }
 }
