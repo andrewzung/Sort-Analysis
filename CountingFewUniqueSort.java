@@ -16,6 +16,7 @@ public class CountingFewUniqueSort
   {
     for (int i = 10; i<100001; i=i*10)
     {
+      
       int totalCompare = 0;
       int totalSwaps = 0;
       for (int j = 0; j<10; j++)
@@ -29,8 +30,23 @@ public class CountingFewUniqueSort
       }
       totalCompare = totalCompare/10;
       totalSwaps = totalSwaps/10;
-      System.out.println("The comparisons and swaps for a few unique array of " + i + " items using a Select Sort is : " + totalCompare + totalSwaps);
+      System.out.println("The comparisons and swaps for a few unique array of " + i + " items using a Select Sort is : " + totalCompare +" and "+ totalSwaps);
       
+      totalCompare = 0;
+      totalSwaps = 0;
+      for (int j = 0; j<10; j++)
+      {
+        int[] list = ArrayGen.fewUniqueArray(i);
+        ModifiedSorts.compare= 0;
+        ModifiedSorts.swaps = 0;
+        ModifiedSorts.bubbleSort(list);
+        totalCompare += ModifiedSorts.compare;
+        totalSwaps += ModifiedSorts.swaps;
+      }
+      totalCompare = totalCompare/10;
+      totalSwaps = totalSwaps/10;
+      System.out.println("The comparisons and swaps for a few unique array of " + i + " items using a Bubble Sort is : " + totalCompare +" and "+ totalSwaps);
+            
       totalCompare = 0;
       totalSwaps = 0;
       for (int j = 0; j<10; j++)
@@ -44,7 +60,7 @@ public class CountingFewUniqueSort
       }
       totalCompare = totalCompare/10;
       totalSwaps = totalSwaps/10;
-      System.out.println("The comparisons and swaps for a few unique array of " + i + " items using a Insert Sort is : " + totalCompare + totalSwaps);
+      System.out.println("The comparisons and swaps for a few unique array of " + i + " items using a Insert Sort is : " + totalCompare +" and "+ totalSwaps);
       
       totalCompare = 0;
       totalSwaps = 0;
@@ -59,7 +75,7 @@ public class CountingFewUniqueSort
       }
       totalCompare = totalCompare/10;
       totalSwaps = totalSwaps/10;
-      System.out.println("The comparisons and swaps for a few unique array of " + i + " items using a Merge Sort is : " + totalCompare + totalSwaps);
+      System.out.println("The comparisons and swaps for a few unique array of " + i + " items using a Merge Sort is : " + totalCompare +" and "+ totalSwaps);
       
       totalCompare = 0;
       totalSwaps = 0;
@@ -74,7 +90,7 @@ public class CountingFewUniqueSort
       }
       totalCompare = totalCompare/10;
       totalSwaps = totalSwaps/10;
-      System.out.println("The comparisons and swaps for a few unique array of " + i + " items using a Quick Sort is : " + totalCompare + totalSwaps);
+      System.out.println("The comparisons and swaps for a few unique array of " + i + " items using a Quick Sort is : " + totalCompare +" and "+ totalSwaps);
     }
   }
 }
